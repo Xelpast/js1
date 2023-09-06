@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function result() 
+        {
+            var sum = 0;
+            var num = Number(document.forms["forms"].elements["inp-forms"].value);
+            var x = Number(document.forms["forms"].elements["inp-forms2"].value);
+            if(Math.abs(x) < 1) 
+            {
+                for(var i = 1; i <= num; i++) 
+                {
+                    sum = sum + x + (((2 * i - 1) * (x**(2 * i + 1))) / ((2 * i) * (2 * i + 1)));
+                }
+                document.writeln(sum);
+            }
+            else 
+            {
+                document.writeln("Неверное условие, измените данные!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id = "forms">
+        <label for="">Введите n</label>
+        <input type="text" id = "inp-forms"><br><br>
+        <label for="">Введите х</label>
+        <input type="text" id = "inp-forms2"><br><br>
+        <button onclick = "result()" value="Отправить">Отправить</button>
+    </form>
+</body>
+</html>
